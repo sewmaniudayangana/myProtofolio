@@ -1,22 +1,22 @@
 // Events start
 $("#btnSaveItem").click(function () {
     saveItem();
-    clearAll();
+    clearItemAll();
     loadAllItem();
 });
 
-// search customer
+// search item
 $("#btnsearchItem").click(function () {
     var searchItemID = $("#txtSearchItem").val();
 
-    var response = searchItem(ssearchItemID);
+    var response = searchItem(searchItemID);
     if (response) {
         $("#itemCode").val(response.code);
         $("#itemName").val(response.name);
         $("#itemQty").val(response.qnty);
         $("#itemPrice").val(response.price);
     }else{
-        clearAll();
+        clearItemAll();
         alert("No Such a Item");
     }
 });
@@ -87,54 +87,41 @@ $('#itemCode,#itemName,#itemQty,#itemPrice').on('keydown', function (eventOb) {
 });
 
 $('#itemCode,#itemName,#itemQty,#itemPrice').on('blur', function () {
-    formValid();
+    formItemValid();
 });
 
 //focusing events
 $("#itemCode").on('keyup', function (eventOb) {
     setButton();
     if (eventOb.key == "Enter") {
-        checkIfValid();
+        checkIfItemValid();
     }
-
-    /*if (eventOb.key == "Control") {
-        var typedItemID = $("#itemCode").val();
-        var srcItem = searchItemFromID(typedItemID);
-        $("#itemCode").val(srcItem.getCustomerID());
-        $("#itemName").val(srcItem.getCustomerName());
-        $("#itemQty").val(srcItem.getCustomerAddress());
-        $("#itemPrice").val(srcItem.getCustomerSalary());
-
-
-       }*/
-
-
 });
 
 $("#itemName").on('keyup', function (eventOb) {
     setButton();
     if (eventOb.key == "Enter") {
-        checkIfValid();
+        checkIfItemValid();
     }
 });
 
 $("#itemQty").on('keyup', function (eventOb) {
     setButton();
     if (eventOb.key == "Enter") {
-        checkIfValid();
+        checkIfItemValid();
     }
 });
 
 $("#itemPrice").on('keyup', function (eventOb) {
     setButton();
     if (eventOb.key == "Enter") {
-        checkIfValid();
+        checkIfItemValid();
     }
 });
 // focusing events end
 $("#btnSaveItem").attr('disabled', true);
 
-function clearAll() {
+function clearItemAll() {
     $('#itemCode,#itemName,#itemQty,#itemPrice').val("");
     $('#itemCode,#itemName,#itemQty,#itemPrice').css('border', '2px solid #ced4da');
     $('#itemCode').focus();
@@ -142,7 +129,7 @@ function clearAll() {
     loadAllItem();
 }
 
-function formValid() {
+function formItemValid() {
     var itemId = $("#itemCode").val();
     $("#itemCode").css('border', '2px solid green');
 
@@ -176,7 +163,7 @@ function formValid() {
     }
 }
 
-function checkIfValid() {
+function checkIfItemValid() {
     var ItemCode = $("#itemCode").val();
     if (regExItemID.test(ItemCode)) {
         $("#itemName").focus();

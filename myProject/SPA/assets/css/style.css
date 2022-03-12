@@ -1,0 +1,85 @@
+#navBar{
+    background-color: #040404c4;
+}
+
+#homePageRow{
+    right: 2vw;
+    width: 48vw;
+}
+
+#navHeader>li>a:hover{
+    color: #b05219;
+    font-weight: bold;
+}
+
+#homePageImages>div>img{
+    height: 91vh;
+    width: 100vw;
+
+}
+
+
+#customerQty,#homePageItemAmount{
+    position: absolute;
+    width: 17vw;
+    height: 36vh;
+    background-color: rgba(74, 58, 58, 0.96);
+    z-index: 2;
+    right: 0;
+    top: 9vh;
+    border-top-left-radius: 32%;
+    border-bottom-right-radius: 34%;
+}
+
+#customerQty > h4 ,#homePageItemAmount > h4{
+    position: relative;
+    top: 4vh;
+    left: 3vw;
+    font-weight: bold;
+    color: white;
+    font-size: 2.5em;
+    width: 150px;
+}
+
+#customerQty >p,#homePageItemAmount > p{
+    position: relative;
+    top: 5vh;
+    left: 6vw;
+    font-weight: bold;
+    color: #c8cf33;
+    font-size: 4.9em;
+    width: 150px;
+}
+
+#homePageItemAmount{
+    right: 0;
+    top: 55vh;
+}
+
+#homePageItemAmount > h4{
+    left: 5vw;
+    top: 6vh;
+    font-size: 2.9em;
+}
+
+#homePageLeftSideBar {
+    position: absolute;
+    width: 11vw;
+    height: 93vh;
+    background-color: #adceda;
+    top: 7vh;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 15%;
+    filter: blur(0.3rem);
+}
+
+#homePageBottomBar{
+    position: absolute;
+    width: 54vw;
+    height: 18vh;
+    background-color: #adceda;
+    bottom: 0vh;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 0%;
+    filter: blur(0.3rem);
+}

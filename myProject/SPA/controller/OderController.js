@@ -40,6 +40,8 @@ function loadCustomerId() {
 
 }
 
+/*asdasdadasdada*/
+
 $("#orderFormCstId").click(function () {
     var selectedId = $("#orderFormCstId option:selected").text();
     setCustomerData(selectedId);
